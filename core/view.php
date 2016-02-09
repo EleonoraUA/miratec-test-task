@@ -3,9 +3,8 @@
 class View
 {
 
-    function generate($content_view, $template_view = null, $data = null)
+    function generate($content_view, $data = null)
     {
-        include 'views/' . $template_view;
         include 'views/' . $content_view;
     }
 }
