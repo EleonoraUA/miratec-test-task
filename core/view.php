@@ -7,7 +7,6 @@ class View
     {
         include 'views/' . $template_view;
         include 'views/' . $content_view;
-        include 'views/script.html';
     }
 }
 
