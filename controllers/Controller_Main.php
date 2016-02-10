@@ -24,9 +24,16 @@ class Controller_Main extends Controller
 
     function action_validate()
     {
-        if (!$this->model->validateAndSaveData()) {
+       /* if (!$this->model->validateAndSaveData()) {
             echo "Form is not valid and didn't save!";
+        } else {*/
+            $data = $this->model->getProfile();
+        if ($data) {
+            $this->view->generate('profile.html', $data);
+        } else {
+
         }
+        //}
     }
 
 }

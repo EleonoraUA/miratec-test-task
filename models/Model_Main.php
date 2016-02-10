@@ -22,9 +22,25 @@ class Model_Main extends Model
             $userId = $mapperUser->saveUser();
             if ($userId) {
                 $res = $this->setAvatar($userId, $mapperUser);
-                if ($res) return true;
+                if ($res) {
+                    $_SESSION['user_id'] = $userId;
+                    return true;
+                }
             }
         }
+    }
+
+    public function getProfile()
+    {
+        $data = array();
+        $_SESSION['user_id'] = 21;
+        if (!empty($_SESSION)) {
+            $mapperUser = new ModuleValidate_MapperUser($this->getConnection());
+            $data = $mapperUser->getProfileData();
+        } else {
+            $data = false;
+        }
+        return $data;
     }
 
     private function passwordsMatches()
@@ -52,7 +68,7 @@ class Model_Main extends Model
         );
         list($width, $height) = getimagesize("uploads/" . $id . "/" . $_FILES["photo"]["name"]);
         foreach ($sizes as $size) {
-            header('Content-Type: image/jpeg');
+            //header('Content-Type: image/jpeg');
             $thumb = imagecreatetruecolor($size[0], $size[1]);
             $source = imagecreatefromjpeg("uploads/" . $id . "/" . $_FILES["photo"]["name"]);
             imagecopyresized($thumb, $source, 0, 0, 0, 0, $size[0], $size[1], $width, $height);

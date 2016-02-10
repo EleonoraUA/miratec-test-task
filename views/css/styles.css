@@ -25,3 +25,8 @@
     cursor: inherit;
     display: block;
 }
+
+.profile {
+    width: 30%;
+    padding: 40%;
+}
