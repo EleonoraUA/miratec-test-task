@@ -20,7 +20,11 @@ class ModuleValidate_MapperUser
         $allowed = array('first_name', 'last_name', 'patronymic', 'email', 'phone', 'password');
         $sql = "INSERT INTO user SET ". $this->insertPDO($allowed, $values);
         $res = $this->db->prepare($sql)->execute($values);
-        return $res;
+        if ($res) {
+            return $this->db->lastInsertId();
+        } else {
+            return false;
+        }
     }
 
     private function insertPDO($allowed, &$values, $source = array())
