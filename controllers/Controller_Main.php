@@ -22,4 +22,9 @@ class Controller_Main extends Controller
         $this->view->generate('index.html');
     }
 
+    function action_validate()
+    {
+
+    }
+
 }

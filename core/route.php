@@ -5,11 +5,16 @@ class Route
 {
     static function start()
     {
+        $routes = explode('/', $_SERVER['REQUEST_URI']);
 
         $controller_name = 'Main'; // controller by default
         $action_name = 'index'; // action by default
+        /*if (strpos($_SERVER['REQUEST_URI'], 'main/validate')) {
+            $action_name = 'validate';
+        } else {
+            $action_name = 'index'; // action by default
+        }*/
 
-        $routes = explode('/', $_SERVER['REQUEST_URI']);
 
         // gets controller name
         if (!empty($routes[2])) {
