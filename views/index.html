@@ -17,7 +17,7 @@
 </head>
 <body>
 <div class="form_block">
-    <form name='reg' role="form" id="reg_form" method="post" action="main/validate/">
+    <form name='reg' enctype="multipart/form-data" role="form" id="reg_form" method="post" action="main/validate/">
         <div class="form-group">
             <label for="first_name">First name</label>
             <input type="text" class="form-control validate[required]" id="first_name" name="first_name" placeholder="Enter your first name">
@@ -44,11 +44,11 @@
         </div>
         <div class="form-group">
             <label for="reenterPass">Re-enter password</label>
-            <input type="password" class="form-control validate[required]" id="reenterPass" name="reenterPass" placeholder="Re-enter your password">
+            <input type="password" class="form-control validate[required, equals[password]]" id="reenterPass" name="reenterPass" placeholder="Re-enter your password">
         </div>
         <div class="form-group">
             <label for="inputfile">Choose photo</label>
-            <input class="btn btn-default" type="file" id="inputfile">
+            <input class="btn btn-default" type="file" id="inputfile" name="photo">
             <p class="help-block">This photo will be set as your avatar</p>
         </div>
         <input type="submit" class="btn btn-default" value="Submit">
