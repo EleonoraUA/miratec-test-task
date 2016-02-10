@@ -1,6 +1,27 @@
 .form_block {
-    margin-top: 5%;
+    margin-top: 2%;
     margin-left: 40%;
-    min-width: 10%;
+    min-width: 13%;
     width: 20%;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
 }

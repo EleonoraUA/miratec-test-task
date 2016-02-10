@@ -17,10 +17,10 @@
 </head>
 <body>
 <div class="form_block">
-    <form role="form">
+    <form role="form" id="reg_form">
         <div class="form-group">
             <label for="first_name">First name</label>
-            <input type="text" class="form-control" id="first_name" placeholder="Enter your first name">
+            <input type="text" class="form-control validate[required, custom[min[2]]]" id="first_name" placeholder="Enter your first name">
         </div>
         <div class="form-group">
             <label for="last_name">Last name</label>
@@ -32,27 +32,31 @@
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="text" class="form-control" id="email" placeholder="Enter your email">
+            <input type="text" class="form-control validate[required, custom[email]]" id="email" placeholder="Enter your email">
         </div>
         <div class="form-group">
             <label for="phone">Phone number</label>
-            <input type="text" class="form-control" id="phone" placeholder="Enter your phone number">
+            <input type="text" class="form-control validate[custom[phone]]" id="phone" placeholder="Enter your phone number">
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="text" class="form-control" id="password" placeholder="Password">
+            <input type="password" class="form-control validate[required]" id="password" placeholder="Password">
         </div>
         <div class="form-group">
             <label for="reenterPassword">Re-enter password</label>
-            <input type="text" class="form-control" id="reenterPassword" placeholder="Re-enter your password">
+            <input type="password" class="form-control validate[required]" id="reenterPassword" placeholder="Re-enter your password">
         </div>
         <div class="form-group">
             <label for="inputfile">Choose photo</label>
-            <input type="file" id="inputfile">
+            <input class="btn btn-default" type="file" id="inputfile">
             <p class="help-block">This photo will be set as your avatar</p>
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
 </div>
+<link rel="stylesheet" href="views/css/validationEngine.jquery.css" type="text/css"/>
+<script src="views/js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
+<script src="views/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+<script src="views/js/index.js"></script>
 </body>
 </html>
