@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8928af4c-51a2-4153-9879-f450932728ea" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/Controller_Main.php" afterPath="$PROJECT_DIR$/controllers/Controller_Main.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Model_Main.php" afterPath="$PROJECT_DIR$/models/Model_Main.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/mappers/User.mapper.class.php" afterPath="$PROJECT_DIR$/classes/mappers/User.mapper.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.html" afterPath="$PROJECT_DIR$/views/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="miritec-test-task.iws" />
@@ -41,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/controllers/Controller_Main.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-20.428572">
-              <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+              <caret line="26" column="46" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -50,8 +50,8 @@
       <file leaf-file-name="Model_Main.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/Model_Main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5463097">
-              <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.40593344">
+              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
               <folding>
                 <element signature="e#7#90#0#PHP" expanded="true" />
               </folding>
@@ -62,11 +62,14 @@
       <file leaf-file-name="User.mapper.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/mappers/User.mapper.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.857143">
-              <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+            <state vertical-scroll-proportion="-8.642858">
+              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
               <folding>
-                <marker date="1455133897209" expanded="true" signature="364:384" placeholder="INSERT INTO ..." />
-                <marker date="1455133897209" expanded="true" signature="364:385" placeholder="INSERT INTO ..." />
+                <marker date="1455139037968" expanded="true" signature="364:384" placeholder="INSERT INTO ..." />
+                <marker date="1455139037968" expanded="true" signature="364:385" placeholder="INSERT INTO ..." />
+                <marker date="1455139037968" expanded="true" signature="770:789" placeholder="INSERT INTO ..." />
+                <marker date="1455139037968" expanded="true" signature="770:790" placeholder="INSERT INTO ..." />
+                <marker date="1455139037968" expanded="true" signature="770:857" placeholder="INSERT INTO ..." />
               </folding>
             </state>
           </provider>
@@ -119,10 +122,10 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/views/js/index.js" />
         <option value="$PROJECT_DIR$/core/route.php" />
-        <option value="$PROJECT_DIR$/controllers/Controller_Main.php" />
         <option value="$PROJECT_DIR$/views/js/jquery.validationEngine-en.js" />
-        <option value="$PROJECT_DIR$/classes/mappers/User.mapper.class.php" />
         <option value="$PROJECT_DIR$/views/index.html" />
+        <option value="$PROJECT_DIR$/classes/mappers/User.mapper.class.php" />
+        <option value="$PROJECT_DIR$/controllers/Controller_Main.php" />
         <option value="$PROJECT_DIR$/models/Model_Main.php" />
       </list>
     </option>
@@ -453,14 +456,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/Controller_Main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.428572">
-          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/js/jquery.validationEngine-en.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -479,17 +474,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/mappers/User.mapper.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.857143">
-          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-          <folding>
-            <marker date="1455133897209" expanded="true" signature="364:384" placeholder="INSERT INTO ..." />
-            <marker date="1455133897209" expanded="true" signature="364:385" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6439942">
@@ -498,10 +482,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/classes/mappers/User.mapper.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.642858">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding>
+            <marker date="1455139037968" expanded="true" signature="364:384" placeholder="INSERT INTO ..." />
+            <marker date="1455139037968" expanded="true" signature="364:385" placeholder="INSERT INTO ..." />
+            <marker date="1455139037968" expanded="true" signature="770:789" placeholder="INSERT INTO ..." />
+            <marker date="1455139037968" expanded="true" signature="770:790" placeholder="INSERT INTO ..." />
+            <marker date="1455139037968" expanded="true" signature="770:857" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/Controller_Main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.428572">
+          <caret line="26" column="46" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/models/Model_Main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5463097">
-          <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.40593344">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
           <folding>
             <element signature="e#7#90#0#PHP" expanded="true" />
           </folding>

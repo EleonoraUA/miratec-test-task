@@ -24,7 +24,9 @@ class Controller_Main extends Controller
 
     function action_validate()
     {
-        $this->model->validateFormData();
+        if (!$this->model->validateAndSaveData()) {
+            echo "Form is not valid and didn't save!";
+        }
     }
 
 }

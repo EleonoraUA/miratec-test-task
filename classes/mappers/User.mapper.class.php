@@ -18,13 +18,31 @@ class ModuleValidate_MapperUser
     public function saveUser()
     {
         $allowed = array('first_name', 'last_name', 'patronymic', 'email', 'phone', 'password');
-        $sql = "INSERT INTO user SET ". $this->insertPDO($allowed, $values);
+        $sql = "INSERT INTO user SET " . $this->insertPDO($allowed, $values);
         $res = $this->db->prepare($sql)->execute($values);
         if ($res) {
             return $this->db->lastInsertId();
         } else {
             return false;
         }
+    }
+
+    public function savePhoto($id, $sizes)
+    {
+        $avatar_type = '';
+        $user_id = '';
+        $file_name = '';
+        $sql = $this->db->prepare("INSERT INTO avatars (pixels, user_id, file_name) VALUES (:pixels, :user_id, :file_name)");
+        $sql->bindParam(':pixels', $avatar_type);
+        $sql->bindParam(':user_id', $user_id);
+        $sql->bindParam(':file_name', $file_name);
+        $user_id = $id;
+        foreach ($sizes as $size) {
+            $avatar_type = $size[0];
+            $file_name = "uploads/" . $id . "/" .  $size[0]. "_" . $_FILES["photo"]["name"];
+            $sql->execute();
+        }
+        return $sql;
     }
 
     private function insertPDO($allowed, &$values, $source = array())
