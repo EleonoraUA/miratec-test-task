@@ -1,6 +1,7 @@
 <?php
 
 error_reporting(E_ALL);
+require_once 'vendor/autoload.php';
 require_once 'classes/Database.php';
 require_once 'core/model.php';
 require_once 'core/view.php';
