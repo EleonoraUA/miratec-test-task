@@ -19,21 +19,27 @@ class Controller_Main extends Controller
 
     function action_index()
     {
+        if (isset($_SESSION)) session_destroy();
         $this->view->generate('index.html');
     }
 
     function action_validate()
     {
-       /* if (!$this->model->validateAndSaveData()) {
+        if (!$this->model->validateAndSaveData()) {
             echo "Form is not valid and didn't save!";
-        } else {*/
-            $data = $this->model->getProfile();
+        } else {
+            header("Location: ../profile");
+        }
+    }
+
+    function action_profile()
+    {
+        $data = $this->model->getProfile();
         if ($data) {
             $this->view->generate('profile.html', $data);
         } else {
-
+            echo "Please register";
         }
-        //}
     }
 
 }

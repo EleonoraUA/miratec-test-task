@@ -20,7 +20,7 @@
     <div class="container">
         <div class="span3 well">
             <center>
-                <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src='<?php echo "../../".$data["photos"][0]["file_name"]?>' name="aboutme" class="img-circle"></a>
+                <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src='<?php echo "../".$data["photos"][0]["file_name"]?>' name="aboutme" class="img-circle"></a>
                 <h3><?php echo $data['first_name']." ".$data['last_name']." ".$data['patronymic']?></h3>
                 <em>click my photo for more</em>
             </center>
@@ -35,7 +35,7 @@
                     </div>
                     <div class="modal-body">
                         <center>
-                            <img src='<?php echo "../../".$data["photos"][1]["file_name"]?>' name="aboutme" border="0" class="img-circle"></a>
+                            <img src='<?php echo "../".$data["photos"][1]["file_name"]?>' name="aboutme" border="0" class="img-circle"></a>
                             <h3 class="media-heading"><?php echo $data['first_name'] ?> <small><?php echo $data['last_name']." ".$data['patronymic'] ?></small></h3>
                         </center>
                         <hr>
@@ -47,7 +47,7 @@
                                 <?php echo $data['phone']?></p>
                             <br>
                             <p class="text-left"><strong>Icon: </strong><br>
-                                <img src='<?php echo "../../".$data["photos"][2]["file_name"]?>' name="aboutme" class="img-circle">
+                                <img src='<?php echo "../".$data["photos"][2]["file_name"]?>' name="aboutme" class="img-circle">
                             <br>
                         </center>
                     </div>
