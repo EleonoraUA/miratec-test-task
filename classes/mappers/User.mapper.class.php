@@ -8,25 +8,39 @@
  */
 class ModuleValidate_MapperUser
 {
+    /**
+     * @var
+     */
     protected $db;
 
+    /**
+     * @param $db
+     */
     function __construct($db)
     {
         $this->db = $db;
     }
 
+    /**
+     * @return bool
+     */
     public function saveUser()
     {
         $allowed = array('first_name', 'last_name', 'patronymic', 'email', 'phone', 'password');
         $sql = "INSERT INTO user SET " . $this->insertPDO($allowed, $values);
         $res = $this->db->prepare($sql)->execute($values);
         if ($res) {
-            return $this->db->lastInsertId();
+            return $this->db->lastInsertId(); // return user id if success
         } else {
             return false;
         }
     }
 
+    /**
+     * @param $id
+     * @param $sizes
+     * @return mixed
+     */
     public function savePhoto($id, $sizes)
     {
         $avatar_type = '';
@@ -45,6 +59,9 @@ class ModuleValidate_MapperUser
         return $sql;
     }
 
+    /**
+     * @return array
+     */
     public function getProfileData()
     {
         error_reporting(0);
@@ -60,6 +77,13 @@ class ModuleValidate_MapperUser
         }
     }
 
+    /**
+     * @param $allowed
+     * @param $values
+     * @param array $source
+     * Function to create prepared statements for Insert query
+     * @return string
+     */
     private function insertPDO($allowed, &$values, $source = array())
     {
         $set = '';

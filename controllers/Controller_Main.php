@@ -13,31 +13,31 @@ class Controller_Main extends Controller
 
     function __construct()
     {
-        $this->model = new Model_Main();
-        $this->view = new View();
+        $this->model = new Model_Main(); //creates model
+        $this->view = new View(); // and view for controller
     }
 
     function action_index()
     {
         if (isset($_SESSION)) session_destroy();
-        $this->view->generate('index.html');
+        $this->view->generate('index.html'); // show main form
     }
 
     function action_validate()
     {
-        if (!$this->model->validateAndSaveData()) {
+        if (!$this->model->validateAndSaveData()) { // validate and save data into database
             echo "Form is not valid and didn't save!";
         } else {
-            header("Location: ../profile");
+            header("Location: ../profile"); // go to profile if success
         }
     }
 
     function action_profile()
     {
         $data = $this->model->getProfile();
-        if ($data) {
+        if ($data) { // shiw profile if user is registered
             $this->view->generate('profile.html', $data);
-        } else {
+        } else { // show error in the other case
             $this->view->generate('error.html');
         }
     }

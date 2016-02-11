@@ -18,12 +18,12 @@ class Model_Main extends Model
 
     public function validateAndSaveData()
     {
-        if (!empty($_POST['first_name']) && !empty($_POST['email']) && $this->passwordsMatches()) {
+        if (!empty($_POST['first_name']) && !empty($_POST['email']) && $this->passwordsMatches()) { // check valid data
             $mapperUser = new ModuleValidate_MapperUser($this->getConnection());
-            $userId = $mapperUser->saveUser();
+            $userId = $mapperUser->saveUser(); // save user and return his id
             if ($userId) {
                 if (!empty($_FILES['photo'])) {
-                    $this->setAvatar($userId, $mapperUser);
+                    $this->setAvatar($userId, $mapperUser); // set user avatar
                 }
                 session_start();
                 $_SESSION['user_id'] = $userId;
@@ -38,21 +38,21 @@ class Model_Main extends Model
         session_start();
         if (!empty($_SESSION)) {
             $mapperUser = new ModuleValidate_MapperUser($this->getConnection());
-            $data = $mapperUser->getProfileData();
+            $data = $mapperUser->getProfileData(); // return user profile data
         } else {
-            $data = false;
+            $data = false; // case when user is not registered
         }
         return $data;
     }
 
-    private function passwordsMatches()
+    private function passwordsMatches() // hash passwords and compare it
     {
         $_POST['password'] = md5($_POST['password']);
         $_POST['reenterPass'] = md5($_POST['reenterPass']);
         return ($_POST['password'] === $_POST['reenterPass']) ? true : false;
     }
 
-    private function setAvatar($id, $mapperUser)
+    private function setAvatar($id, $mapperUser) // save uploaded file to the server
     {
         if (!file_exists('uploads/' . $id)) {
             mkdir('uploads/' . $id, 0777, true);
@@ -62,7 +62,7 @@ class Model_Main extends Model
         return $res;
     }
 
-    private function scaleAndSave($id, $mapperUser)
+    private function scaleAndSave($id, $mapperUser) // scale the photo  and save in different sizes
     {
         //header('Content-Type: image/jpeg');
         $sizes = array(
@@ -78,7 +78,7 @@ class Model_Main extends Model
             imagecopyresized($thumb, $source, 0, 0, 0, 0, $size[0], $size[1], $width, $height);
             imagejpeg($thumb, "uploads/" . $id . "/" . $size[0] . "_" . $_FILES["photo"]["name"]);
         }
-        $res = $mapperUser->savePhoto($id, $sizes);
+        $res = $mapperUser->savePhoto($id, $sizes); // save to database
         return $res;
     }
 }
