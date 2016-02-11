@@ -38,7 +38,7 @@ class Controller_Main extends Controller
         if ($data) {
             $this->view->generate('profile.html', $data);
         } else {
-            echo "Please register";
+            $this->view->generate('error.html');
         }
     }
 

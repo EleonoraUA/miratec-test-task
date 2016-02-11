@@ -47,6 +47,8 @@ class Model_Main extends Model
 
     private function passwordsMatches()
     {
+        $_POST['password'] = md5($_POST['password']);
+        $_POST['reenterPass'] = md5($_POST['reenterPass']);
         return ($_POST['password'] === $_POST['reenterPass']) ? true : false;
     }
 

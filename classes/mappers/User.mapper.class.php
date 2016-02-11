@@ -47,14 +47,17 @@ class ModuleValidate_MapperUser
 
     public function getProfileData()
     {
-        $user_sql = $this->db->prepare("SELECT first_name, last_name, patronymic, email, phone FROM user WHERE user_id = " . $_SESSION['user_id']);
-        $photo_sql = $this->db->prepare("SELECT file_name, pixels FROM avatars WHERE user_id = " . $_SESSION['user_id']);
-        $user_sql->execute();
-        $photo_sql->execute();
-        // set the resulting array to associative
-        $user_sql->setFetchMode(PDO::FETCH_ASSOC);
-        $photo_sql->setFetchMode(PDO::FETCH_ASSOC);
-        return array_merge($user_sql->fetch(), array("photos" => $photo_sql->fetchAll()));
+        error_reporting(0);
+        if (!empty($_SESSION)) {
+            $user_sql = $this->db->prepare("SELECT first_name, last_name, patronymic, email, phone FROM user WHERE user_id = " . $_SESSION['user_id']);
+            $photo_sql = $this->db->prepare("SELECT file_name, pixels FROM avatars WHERE user_id = " . $_SESSION['user_id']);
+            $user_sql->execute();
+            $photo_sql->execute();
+            // set the resulting array to associative
+            $user_sql->setFetchMode(PDO::FETCH_ASSOC);
+            $photo_sql->setFetchMode(PDO::FETCH_ASSOC);
+            return array_merge($user_sql->fetch(), array("photos" => $photo_sql->fetchAll()));
+        }
     }
 
     private function insertPDO($allowed, &$values, $source = array())
